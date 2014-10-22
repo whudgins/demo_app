@@ -1,0 +1,21 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+<a href="/users">Users</a>
+<a href="/microposts">Microposts</a>
+<br/><br/>
+  <tbody> 
+    <% @microposts.each do |micropost| %>
+      <tr>
+        <td><%= micropost.content %> - @<%= micropost.user_id %></td><br/>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <br/><br/>
+   
+    <% @users.each do |user| %>
+	  <% user.microposts.each do |post| %>
+	  	<%= post.content %>
+	  <% end %>
+	  <br/>
+    <% end %>
